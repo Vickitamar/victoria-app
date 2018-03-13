@@ -12,14 +12,18 @@ import App from "./App";
 
 import store from "./data/store";
 import initial from "./data/initial";
+import { Provider } from "react-redux";
 
 
 
-let articles = store.getState().get("articles");
+
 // pass our articles through to App using props
+
 ReactDOM.render(
-    <Router>
-        <App articles={ articles } />
-    </Router>,
+    <Provider store={ store }>
+        <Router>
+            <App />
+        </Router>
+    </Provider>,
     document.getElementById("root"),
 );
