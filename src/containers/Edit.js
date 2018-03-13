@@ -6,7 +6,7 @@ const mapStateToProps = (state, { id }) => {
     const articles = state.get("articles");
     const article = articles.find(a => a.get("id") === id);
 
-    const fields = [
+    const fields = !article ? null : [
 	    { name: "title", label: "Title", value: article.get("title")},
 	    { name: "article", label: "Article", value: article.get("article") },
 	];

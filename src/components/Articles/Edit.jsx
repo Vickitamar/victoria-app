@@ -1,9 +1,11 @@
 import React from "react";
+import FourOhFour from "../FourOhFour";
 
 import Form from "../Forms/Form";
 
 
-const Edit = ({fields}) => (
+const Edit = ({fields}) => !fields ? <FourOhFour /> : (
+	
     <div>
         <h2>Edit Article</h2>
 
