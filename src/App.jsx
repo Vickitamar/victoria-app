@@ -11,7 +11,7 @@ import FourOhFour from "./components/FourOhFour";
 import Articles from "./containers/Articles";
 import Article from "./containers/Article";
 import Add from "./components/Articles/Add";
-import Edit from "./components/Articles/Edit";
+import Edit from "./containers/Edit";
 
 const App = () => (
     <div>
