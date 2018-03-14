@@ -12,7 +12,23 @@ class Form extends Component {
         this.state = {
             fields: props.fields.slice(),
         }
+        this.submit = this.submit.bind(this);
     }
+
+    submit(e) {
+        e.preventDefault();
+
+        // for each field use the name as a key and the value as a value
+        // don't need the label
+        let data = this.state.fields.reduce((data, field) => {
+            data[field.name] = field.value;
+            return data;
+        }, {});
+
+        this.props.onSubmit(data);
+    }
+
+    
     
     change(e, i) {
         const fields = this.state.fields.slice();
@@ -28,7 +44,7 @@ class Form extends Component {
         const { className, button } = this.props;
 
         return (
-            <form className={ "form" + (className ? " " + className : "") } >
+            <form onSubmit={ this.submit } className={ "form" + (className ? " " + className : "") } >
                 { this.state.fields.map(({ name, label, value }, i) => (
                     <Input
                         key={ i }
