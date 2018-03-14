@@ -11,7 +11,6 @@ import App from "./App";
 
 
 import store from "./data/store";
-import initial from "./data/initial";
 import { Provider } from "react-redux";
 
 

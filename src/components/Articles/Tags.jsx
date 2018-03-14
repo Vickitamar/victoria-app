@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Tags = ({ tags }) => (
     <div>
         { tags.map((tag, i) => (
-            <Link to={"/"+tag} ><span className="label label-primary" key={ i }>{ tag }</span></Link>
+            <Link to={"/"+tag} key={ i }><span className="label label-primary" >{ tag }</span></Link>
         ))}
     </div>
 );

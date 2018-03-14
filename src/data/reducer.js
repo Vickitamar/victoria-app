@@ -1,4 +1,3 @@
-import initial from "./initial";
 import { Map, List } from "immutable";
 
 let lastID = 2;
@@ -20,11 +19,13 @@ const createArticle = ({ title, article }) => {
 // use the createArticle function
 const addArticle = (state, data) => state.update("articles", articles => articles.push(createArticle(data)));
 
+const delArticle = (state, {id}) => state.update("articles", articles => articles.filter( article => article.get("id") !== id));
 
 
 const reducer = (state, action) => {
     switch (action.type) {
     	case "addArticle": return addArticle(state, action);
+        case "delArticle": return delArticle(state, action);
         default: return state;
     }
 }

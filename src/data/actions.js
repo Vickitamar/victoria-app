@@ -5,3 +5,10 @@ export const addArticle = ({ title, article }) => {
         article: article,
     };
 };
+
+export const delArticle = ( id ) => {
+	return {
+		type: "delArticle",
+		id: id,
+	};
+};
