@@ -12,6 +12,7 @@ import Articles from "./containers/Articles";
 import Article from "./containers/Article";
 import Add from "./components/Articles/Add";
 import Edit from "./containers/Edit";
+import Tagged from "./containers/Tagged";
 
 const App = () => (
     <div>
@@ -32,6 +33,10 @@ const App = () => (
             
             <Route path="/articles/:id/edit" render={ ({ match }) => (
                 <Edit id={ +match.params.id }/> 
+            )} />
+
+            <Route path="/:tag" render={ ({ match }) => (
+                <Tagged tag={ match.params.tag }/> 
             )} />
 
             { /* 404 page */}
