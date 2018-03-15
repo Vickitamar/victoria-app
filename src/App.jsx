@@ -13,6 +13,7 @@ import Article from "./containers/Article";
 import Add from "./containers/Add";
 import Edit from "./containers/Edit";
 import Tagged from "./containers/Tagged";
+// import Comments from "./containers/Comments";
 
 const App = () => (
     <div>
