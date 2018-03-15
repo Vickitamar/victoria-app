@@ -12,3 +12,12 @@ export const delArticle = ( id ) => {
 		id: id,
 	};
 };
+
+export const editArticle = ({ title, article }, id) => {
+    return {
+        type: "editArticle",
+        title: title,
+        article: article,
+        id: id,
+    };
+};

@@ -21,11 +21,20 @@ const addArticle = (state, data) => state.update("articles", articles => article
 
 const delArticle = (state, {id}) => state.update("articles", articles => articles.filter( article => article.get("id") !== id));
 
+const editArticle = (state, {title, article, id}) => state.update("articles", articles => articles.map( a => {
+        if (a.get("id") === id){
+            return a.set("title", title).set("article", article);
+        }
+        return a;
+    }
+));
+
 
 const reducer = (state, action) => {
     switch (action.type) {
     	case "addArticle": return addArticle(state, action);
         case "delArticle": return delArticle(state, action);
+        case "editArticle": return editArticle(state, action);
         default: return state;
     }
 }
