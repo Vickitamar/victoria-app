@@ -1,9 +1,7 @@
-export const addArticle = ({ title, article, tags }) => {
+export const addArticle = (article) => {
     return {
         type: "addArticle",
-        title: title,
-        article: article,
-        tags: tags.split(", "),
+        article
     };
 };
 

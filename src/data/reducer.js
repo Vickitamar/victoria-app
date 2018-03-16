@@ -1,21 +1,5 @@
 import { Map, List } from "immutable";
 
-let lastID = 2;
-
-// create a function that returns a new article Map
-const createArticle = ({ title, article, tags }) => {
-    // up the ID by 1 every time
-    lastID += 1;
-
-    return Map({
-        id: lastID,
-        title: title,
-        article: article,
-        comments: List(),
-        tags: List(tags),
-    });
-};
-
 const createComment = (email, comment) => {
     return Map({
         email: email,
@@ -24,7 +8,7 @@ const createComment = (email, comment) => {
 }
 
 // use the createArticle function
-const addArticle = (state, action) => state.update("articles", articles => articles.push(createArticle(action)));
+const addArticle = (state, {article}) => state.update("articles", articles => articles.push(article));
 
 const delArticle = (state, {id}) => state.update("articles", articles => articles.filter( article => article.get("id") !== id));
 
