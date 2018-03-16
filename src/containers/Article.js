@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Article from "../components/Articles/Article";
-import { delArticle } from "../data/actions";
+import { delArticle } from "../data/actions/state";
 
 
 // the second argument passed to mapStateToProps represent the props passed in from the parent

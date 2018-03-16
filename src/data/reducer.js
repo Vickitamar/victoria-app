@@ -45,6 +45,9 @@ const addComment = (state, {email, comment, id}) => state.update("articles", art
     }
 ))
 
+const setArticles = (state, { articles }) => state.set("articles", articles);
+
+
 //check id matches
 //push comment to comments
 
@@ -55,6 +58,7 @@ const reducer = (state, action) => {
         case "delArticle": return delArticle(state, action);
         case "editArticle": return editArticle(state, action);
         case "addComment": return addComment(state, action);
+        case "setArticles": return setArticles(state, action);
         default: return state;
     }
 }

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Comments from "../components/Articles/Comments";
-import { addComment} from "../data/actions";
+import { addComment} from "../data/actions/state";
 
 // map dispatch to props gets given store's dispatch method as the first argument
 // again, we return an object which gets passed in as props to the wrapped component

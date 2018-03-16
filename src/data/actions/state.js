@@ -32,3 +32,10 @@ export const addComment = ({ email, comment }, id) => {
         id: id,
     };
 };
+
+export const setArticles = articles => {
+    return {
+        type: "setArticles",
+        articles: articles,
+    };
+};
