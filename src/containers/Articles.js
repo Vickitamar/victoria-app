@@ -9,7 +9,7 @@ import Articles from "../components/Articles/Articles";
 // it should return an object, which gets passed in as props to the connected component
 const mapStateToProps = state => {
     return {
-        articles: state.get("articles"),
+        titles: state.get("titles"),
     };
 };
 

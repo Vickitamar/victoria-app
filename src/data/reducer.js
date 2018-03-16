@@ -7,6 +7,7 @@ const createComment = (email, comment) => {
     })
 }
 
+
 // use the createArticle function
 const addArticle = (state, {article}) => state.update("articles", articles => articles.push(article));
 
@@ -29,7 +30,9 @@ const addComment = (state, {email, comment, id}) => state.update("articles", art
     }
 ))
 
-const setArticles = (state, { articles }) => state.set("articles", articles);
+const setTitles = (state, { articles }) => state.set("titles", articles);
+
+const setArticle = (state, { article}) => state.update("articles", articles => articles.set(article.get("id"), article.set("comments", List())));
 
 
 //check id matches
@@ -42,7 +45,8 @@ const reducer = (state, action) => {
         case "delArticle": return delArticle(state, action);
         case "editArticle": return editArticle(state, action);
         case "addComment": return addComment(state, action);
-        case "setArticles": return setArticles(state, action);
+        case "setTitles": return setTitles(state, action);
+        case "setArticle": return setArticle(state, action);
         default: return state;
     }
 }

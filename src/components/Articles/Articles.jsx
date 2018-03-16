@@ -8,18 +8,18 @@ class Articles extends Component {
     }
 
     render () {
-        const { articles } = this.props;
+        const { titles } = this.props;
 
         return (
             <div>
                 { /* check there are articles to show */ }
-                { articles.count() ?
+                { titles.count() ?
                     <ul className="list-group">
                         { /* map over each article and display a list item for each one */ }
-                        { articles.map(article => (
-                            <li className="list-group-item" key={ article.get("id") }>
+                        { titles.map(title => (
+                            <li className="list-group-item" key={ title.get("id") }>
                                 { /* link to the article using its id */ }
-                                <Link to={ "/articles/" + article.get("id") }>{ article.get("title") }</Link>
+                                <Link to={ "/articles/" + title.get("id") }>{ title.get("title") }</Link>
                             </li>
                         ))}
                     </ul>

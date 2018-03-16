@@ -31,9 +31,16 @@ export const addComment = ({ email, comment }, id) => {
     };
 };
 
-export const setArticles = articles => {
+export const setTitles = articles => {
     return {
-        type: "setArticles",
+        type: "setTitles",
         articles: articles,
     };
 };
+
+export const setArticle = article => {
+    return {
+        type: "setArticle",
+        article: article,
+    };
+};    

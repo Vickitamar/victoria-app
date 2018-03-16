@@ -3,8 +3,9 @@ import axios from "../../axios";
 import { fromJS } from "immutable";
 
 // import the setArticles action
-import { setArticles } from "./state";
+import { setTitles } from "./state";
 import { addArticle } from "./state";
+import { setArticle} from "./state";
 
 export const getArticles = () => dispatch => {
     axios.get("/articles").then(response => {
@@ -12,9 +13,16 @@ export const getArticles = () => dispatch => {
         const articles = fromJS(response.data);
 
         // dispatch the setArticles action, passing along the articles List
-        dispatch(setArticles(articles));
+        dispatch(setTitles(articles));
     });
 };
+
+export const getArticle = (id) => dispatch => {
+	axios.get("/articles/"+id).then(response => {
+		const article = fromJS(response.data);
+		dispatch(setArticle(article));
+	})
+}
 
 export const postArticle = (data) => dispatch => {
 	axios.post("/articles", {
